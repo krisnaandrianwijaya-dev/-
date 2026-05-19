@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibePro Digital | Ultra Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0e121a', // Tema gelap melankolis mahal
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* ========================================================
+           EFEK SUPER PREMIUM: LION FLASH & CHROMA GLOW
+           ======================================================== */
+
+        /* 1. Kontainer Utama Logo (Tetap Sama) */
+        .logo-wrapper {
+            position: relative;
+            opacity: 0;
+            animation: logoAppear 1s cubic-bezier(0.19, 1, 0.22, 1) 0.5s forwards;
+            overflow: hidden; 
+            border-radius: 9999px; 
+        }
+
+        @keyframes logoAppear {
+            0% { opacity: 0; transform: translateY(40px) scale(0.9); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* 2. Animasi Logo & Glow Denyut (Tetap Sama) */
+        .premium-logo {
+            filter: brightness(0.1) grayscale(1); 
+            animation: 
+                colorshift 2s cubic-bezier(0.4, 0, 0.2, 1) 1.2s forwards,
+                finalGlow 4s infinite alternate ease-in-out 3s; 
+        }
+
+        @keyframes colorshift {
+            0% { filter: brightness(0.1) grayscale(1); }
+            100% { 
+                filter: brightness(1) grayscale(0); 
+                box-shadow: 0 0 30px rgba(59, 130, 246, 0.4), 0 0 10px rgba(239, 68, 68, 0.2);
+            }
+        }
+
+        @keyframes finalGlow {
+            0% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 5px rgba(239, 68, 68, 0.1); }
+            100% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), 0 0 15px rgba(239, 68, 68, 0.3); }
+        }
+
+        /* 3. Efek Premium "Clingg" (Tetap Sama, Kunci Timing Teks) */
+        .clingg-effect {
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0) 30%,
+                rgba(255, 255, 255, 0.8) 50%,
+                rgba(255, 255, 255, 0) 70%,
+                transparent 70%
+            );
+            transform: skewX(-20deg);
+            animation: clinggDash 0.7s ease-out 1s forwards;
+        }
+
+        @keyframes clinggDash {
+            0% { left: -150%; opacity: 0; }
+            10% { opacity: 1; }
+            100% { left: 150%; opacity: 0; }
+        }
+
+        /* 4. BARU: EFEK LION FLASH CEPAT (Menghentak & Menyilaukan) */
+        
+        .glow-text, .glow-sub { opacity: 0; } /* Sembunyikan awal */
+
+        @keyframes lionFlashEntry {
+            0% {
+                opacity: 0;
+                transform: translateY(20px) scale(0.8);
+                filter: brightness(0) blur(5px);
+                text-shadow: none;
+            }
+            5% { /* PUNCAK FLASH CEPAT (0.1 detik) - Menyilaukan kayak Kilat Singa */
+                opacity: 1;
+                transform: translateY(0) scale(1.1);
+                filter: brightness(4) blur(0); /* Sangat Terang */
+                text-shadow: 0 0 60px #fff, 0 0 30px #fff; /* Kilatan Putih Total */
+            }
+            15% { /* Mengendap ke Premium Glow asli */
+                transform: translateY(0) scale(1);
+                filter: brightness(1);
+                /* Cahaya Biru Stabil sesuai permintaan sebelumnya */
+                text-shadow: 0 0 15px rgba(59, 130, 246, 0.7); 
+            }
+            100% {
+                opacity: 1;
+                filter: brightness(1);
+                text-shadow: 0 0 15px rgba(59, 130, 246, 0.7); 
+            }
+        }
+
+        /* Variasi Red Lion Flash untuk Subtitle */
+        @keyframes lionFlashSubEntry {
+            0% {
+                opacity: 0;
+                transform: translateY(15px) scale(0.9);
+                filter: brightness(0) blur(3px);
+                text-shadow: none;
+            }
+            5% { /* PUNCAK FLASH CEPAT - Kilatan Merah Putih */
+                opacity: 1;
+                transform: translateY(0) scale(1.05);
+                filter: brightness(3) blur(0);
+                text-shadow: 0 0 50px #fff, 0 0 20px #ef4444; 
+            }
+            15% { /* Mengendap ke Glow Merah Stabil */
+                transform: translateY(0) scale(1);
+                filter: brightness(1);
+                text-shadow: 0 0 10px rgba(239, 68, 68, 0.6); 
+            }
+            100% {
+                opacity: 1;
+                filter: brightness(1);
+                text-shadow: 0 0 10px rgba(239, 68, 68, 0.6); 
+            }
+        }
+
+        /* Terapkan Lion Flash Cepat tepat setelah Clingg dash mulai (1.3s & 1.5s) */
+        .glow-text {
+            animation: lionFlashEntry 2s cubic-bezier(0.19, 1, 0.22, 1) 1.3s forwards;
+        }
+
+        .glow-sub {
+            animation: lionFlashSubEntry 2s cubic-bezier(0.19, 1, 0.22, 1) 1.5s forwards;
+            padding-top: 1px;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            margin-top: 0.75rem; /* Perbaikan minor layout */
+        }
+
+    </style>
+</head>
+<body class="bg-darkBg flex flex-col items-center justify-center min-h-screen overflow-hidden relative">
+
+    <div class="logo-wrapper w-64 h-64 border-2 border-slate-800 shadow-2xl flex items-center justify-center p-2 mb-10 z-10">
+        <img src="assets/logo.jpeg" alt="VibePro Digital" 
+             class="premium-logo w-full h-full object-cover rounded-full">
+        <div class="clingg-effect pointer-events-none"></div>
+    </div>
+
+    <div class="flex flex-col items-center text-center z-10">
+        <h1 class="glow-text text-3xl font-black uppercase text-white tracking-widest leading-none">
+            vibepro digital
+        </h1>
+        <p class="glow-sub text-[11px] font-bold uppercase tracking-[0.3em] text-red-400 mt-3 p-1 border-t border-slate-700/50">
+            melayani kebutuhan premium anda
+        </p>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            window.location.href = 'login.html';
+        }, 6000); 
+    </script>
+
+</body>
+</html>

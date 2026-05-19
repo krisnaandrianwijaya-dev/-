@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaturan - VibePro Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        appBg: '#1c2029',
+                        panelBg: '#232833',
+                        cardBg: '#1a1e27',
+                        inputBg: '#1e293b',
+                        btnActive: '#7a8b9e',
+                        borderGray: '#4a5568',
+                        textBlue: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-appBg text-white font-sans h-screen p-4 flex gap-4 overflow-hidden">
+
+    <aside class="w-72 bg-panelBg rounded-2xl flex flex-col shadow-lg">
+        <div class="p-6 flex items-center gap-4">
+            <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-inner">
+                <span class="text-blue-600 font-black text-xl">V</span><span class="text-red-600 font-black text-xl">P</span>
+            </div>
+            <div class="leading-tight">
+                <h1 class="text-xl font-bold tracking-wide">ADMIN</h1>
+                <h1 class="text-xl font-bold tracking-wide">DASHBOARD</h1>
+            </div>
+        </div>
+
+        <nav class="flex-1 px-6 space-y-3 mt-4">
+            <a href="dashboard.html" class="flex items-center justify-center w-full py-2.5 border border-borderGray text-slate-300 hover:bg-slate-700 hover:text-white rounded-xl font-medium text-sm transition">
+                Dashboard
+            </a>
+            <a href="kelolaproduk.html" class="flex items-center justify-center w-full py-2.5 border border-borderGray text-slate-300 hover:bg-slate-700 hover:text-white rounded-xl font-medium text-sm transition">
+                Kelola Produk
+            </a>
+            <a href="pengguna.html" class="flex items-center justify-center w-full py-2.5 border border-borderGray text-slate-300 hover:bg-slate-700 hover:text-white rounded-xl font-medium text-sm transition">
+                Pengguna
+            </a>
+            <a href="transaksi.html" class="flex items-center justify-center w-full py-2.5 border border-borderGray text-slate-300 hover:bg-slate-700 hover:text-white rounded-xl font-medium text-sm transition">
+                Transaksi
+            </a>
+            
+            <a href="pengaturan.html" class="flex items-center justify-center w-full py-2.5 bg-btnActive text-white rounded-xl font-semibold text-sm transition shadow-md">
+                Pengaturan
+            </a>
+        </nav>
+    </aside>
+
+    <div class="flex-1 flex flex-col gap-4 overflow-hidden">
+        
+        <header class="bg-panelBg rounded-2xl h-20 flex items-center justify-between px-8 shadow-lg shrink-0">
+            <div class="relative w-[400px]">
+                <input type="text" placeholder="Cari pengaturan..." 
+                    class="w-full bg-[#7a8b9e] text-white placeholder-slate-200 rounded-full px-5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
+                <div class="absolute right-4 top-3">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-3 cursor-pointer hover:text-slate-300 transition">
+                <span class="font-medium text-sm">Notifikasi</span>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+            </div>
+        </header>
+
+        <main class="flex-1 bg-panelBg rounded-2xl shadow-lg flex flex-col overflow-hidden">
+            <div class="p-6 pb-4 border-b border-slate-700">
+                <h2 class="text-sm font-bold tracking-wider inline-block border-b-2 border-textBlue pb-1 uppercase">
+                    PENGATURAN SISTEM
+                </h2>
+            </div>
+            
+            <div class="flex-1 overflow-auto p-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    
+                    <div class="bg-cardBg p-6 rounded-xl border border-slate-700 h-max">
+                        <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-textBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                            Profil Akun Admin
+                        </h3>
+                        <form action="#" method="POST" class="space-y-4">
+                            <div>
+                                <label class="block text-xs text-slate-400 mb-1">Nama Lengkap</label>
+                                <input type="text" value="Super Admin" class="w-full bg-inputBg border border-slate-600 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-textBlue transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-slate-400 mb-1">Alamat Email</label>
+                                <input type="email" value="admin@vibepro.digital" class="w-full bg-inputBg border border-slate-600 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-textBlue transition">
+                            </div>
+                            <div class="pt-2">
+                                <button type="submit" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Simpan Profil</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="bg-cardBg p-6 rounded-xl border border-slate-700 h-max">
+                        <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                            Keamanan & Password
+                        </h3>
+                        <form action="#" method="POST" class="space-y-4">
+                            <div>
+                                <label class="block text-xs text-slate-400 mb-1">Password Lama</label>
+                                <input type="password" placeholder="Masukkan password lama" class="w-full bg-inputBg border border-slate-600 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-textBlue transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-slate-400 mb-1">Password Baru</label>
+                                <input type="password" placeholder="Masukkan password baru" class="w-full bg-inputBg border border-slate-600 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-textBlue transition">
+                            </div>
+                            <div class="pt-2">
+                                <button type="submit" class="bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Update Password</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="bg-cardBg p-6 rounded-xl border border-slate-700 h-max lg:col-span-2">
+                        <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            Preferensi Sistem
+                        </h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs text-slate-400 mb-1">Nama Aplikasi</label>
+                                <input type="text" value="VibePro Digital" class="w-full bg-inputBg border border-slate-600 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-textBlue transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-slate-400 mb-1">Mata Uang Default</label>
+                                <select class="w-full bg-inputBg border border-slate-600 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-textBlue transition text-white">
+                                    <option value="IDR">Rupiah (IDR)</option>
+                                    <option value="USD">Dolar (USD)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="md:col-span-2 flex items-center justify-between bg-inputBg p-4 rounded-lg border border-slate-600 mt-2">
+                                <div>
+                                    <h4 class="text-sm font-bold text-white">Maintenance Mode</h4>
+                                    <p class="text-xs text-slate-400">Aktifkan jika website sedang dalam perbaikan (user tidak bisa login).</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" value="" class="sr-only peer">
+                                    <div class="w-11 h-6 bg-slate-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                            
+                            <div class="md:col-span-2">
+                                <button type="button" class="bg-green-600 hover:bg-green-500 text-white px-6 py-2.5 rounded-lg text-sm font-semibold transition w-max">Simpan Pengaturan Sistem</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

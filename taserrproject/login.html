@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        loginBg: '#0e121a', 
+                        cardBg: '#1a1e2e',  
+                        inputBg: '#1e293b', 
+                        secondaryText: '#94a3b8', 
+                        primaryBlue: '#2563eb', 
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Efek Glow tambahan untuk Spinner Loading agar terkesan Premium */
+        .premium-spinner {
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-loginBg flex items-center justify-center min-h-screen p-4 font-sans text-white relative">
+
+    <div id="loading-overlay" class="fixed inset-0 bg-loginBg/90 backdrop-blur-md hidden flex-col items-center justify-center z-50">
+        <div class="flex flex-col items-center">
+            <div class="premium-spinner w-16 h-16 border-4 border-primaryBlue border-t-transparent rounded-full animate-spin mb-6"></div>
+            
+            <h2 class="text-xl font-bold tracking-widest uppercase animate-pulse text-white">
+                Authenticating...
+            </h2>
+            <p class="text-xs text-secondaryText mt-2 tracking-wide">
+                Sedang menghubungkan ke sesi aman sistem
+            </p>
+        </div>
+    </div>
+
+    <div class="bg-cardBg w-full max-w-md p-10 rounded-2xl shadow-2xl border border-slate-800/80">
+        
+        <div class="text-center mb-10">
+            <h1 class="text-3xl font-bold tracking-tight mb-2">Welcome Back</h1>
+            <p class="text-secondaryText text-base">Login to your account</p>
+        </div>
+
+        <form id="login-form" class="space-y-6">
+            
+            <div class="space-y-2">
+                <label for="username" class="block text-sm font-medium text-white">Username</label>
+                <input type="text" id="username" name="username" required
+                    class="w-full bg-inputBg border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primaryBlue focus:ring-1 focus:ring-primaryBlue transition-colors">
+            </div>
+
+            <div class="space-y-2">
+                <label for="password" class="block text-sm font-medium text-white">Password</label>
+                <input type="password" id="password" name="password" required
+                    class="w-full bg-inputBg border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primaryBlue focus:ring-1 focus:ring-primaryBlue transition-colors">
+            </div>
+
+            <div class="flex items-center justify-between text-sm">
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" id="remember" name="remember" 
+                        class="w-4 h-4 rounded border-slate-600 bg-inputBg text-primaryBlue focus:ring-primaryBlue">
+                    <label for="remember" class="text-secondaryText cursor-pointer">Remember Me</label>
+                </div>
+                <a href="forgotpass.html" class="text-primaryBlue hover:text-blue-400 transition-colors">
+                    Forgot Password?
+                </a>
+            </div>
+
+            <div class="pt-2">
+                <button type="submit" 
+                    class="w-full bg-primaryBlue hover:bg-blue-700 text-white font-bold py-3.5 rounded-lg text-base tracking-wider uppercase transition-colors duration-200">
+                    LOG IN
+                </button>
+            </div>
+
+        </form>
+
+        <div class="mt-8 text-center text-sm text-secondaryText">
+            <p>
+                Don't have an account? 
+                <a href="signup.html" class="text-primaryBlue hover:text-blue-400 font-semibold transition-colors">
+                    Sign up
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            // 1. Cegah form agar tidak langsung pindah halaman/refresh
+            event.preventDefault(); 
+            
+            // 2. Ambil elemen layar loading overlay
+            const loadingOverlay = document.getElementById('loading-overlay');
+            
+            // 3. Munculkan loading dengan mengubah class 'hidden' menjadi 'flex'
+            loadingOverlay.classList.remove('hidden');
+            loadingOverlay.classList.add('flex');
+            
+            // 4. Set waktu tunggu (Delay)
+            setTimeout(() => {
+                // Setelah 10 detik selesai, baru lempar ke halaman dashboard
+                window.location.href = 'dashboard.html';
+            }, 10000); 
+        });
+    </script>
+
+</body>
+</html>

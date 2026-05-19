@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password - VibePro Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0f172a',
+                        cardBg: '#1e293b',
+                        inputBg: '#1e293b', /* Sesuai gambar, inputnya menyatu dengan card tapi ada border */
+                        primary: '#3b82f6',
+                        textBlue: '#1e3a8a', /* Warna biru tua untuk teks tombol */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-darkBg flex items-center justify-center min-h-screen font-sans text-white">
+
+    <div class="bg-cardBg w-full max-w-md p-8 rounded-2xl shadow-2xl border border-slate-700">
+        
+        <div class="flex flex-col items-center mb-6">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 bg-white rounded flex items-center justify-center font-bold text-blue-600 text-xl">
+                    VP
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-wider">ADMIN</h1>
+                    <h2 class="text-sm font-semibold text-white">VIBEPRO DIGITAL</h2>
+                </div>
+            </div>
+            
+            <h3 class="text-xl font-bold mt-2 mb-2">Forgot Password</h3>
+            <p class="text-[11px] text-slate-300 text-center px-4">
+                Enter Your Registered email addres bellow, and we'll send you intruction to resset your password
+            </p>
+        </div>
+
+        <form action="emailsukses.html" method="GET" class="space-y-6">
+            
+            <div>
+                <label for="email" class="block text-[10px] font-medium text-slate-300 mb-1 ml-1">Email Addres</label>
+                <input type="email" id="email" name="email" required
+                    class="w-full bg-inputBg border border-slate-500 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-white transition-colors">
+            </div>
+
+            <button type="submit" 
+                class="w-full bg-white hover:bg-slate-200 text-textBlue font-bold py-2.5 rounded-full text-sm transition-colors mt-2 shadow-lg">
+                Send Reset Intructations
+            </button>
+
+        </form>
+    </div>
+
+</body>
+</html>

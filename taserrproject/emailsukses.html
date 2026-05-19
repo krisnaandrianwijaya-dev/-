@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Sent - VibePro Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0f172a',
+                        cardBg: '#1e293b',
+                        successGreen: '#16a34a', /* Warna hijau logo centang */
+                        textBlue: '#1e3a8a',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-darkBg flex items-center justify-center min-h-screen font-sans text-white">
+
+    <div class="bg-cardBg w-full max-w-md p-8 rounded-2xl shadow-2xl border border-slate-700">
+        
+        <div class="flex flex-col items-center mb-8">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="w-10 h-10 bg-white rounded flex items-center justify-center font-bold text-blue-600 text-xl">
+                    VP
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-wider">ADMIN</h1>
+                    <h2 class="text-sm font-semibold text-white">VIBEPRO DIGITAL</h2>
+                </div>
+            </div>
+            
+            <div class="w-16 h-16 bg-successGreen rounded-full flex items-center justify-center mb-4 shadow-lg shadow-green-900/50">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+
+            <h3 class="text-xl font-bold mb-3">Email Sent!</h3>
+            
+            <div class="text-[10px] text-slate-300 text-center space-y-4 px-2">
+                <p>Intructions to reset your password have been sent to <span class="font-bold text-white">admin@email.com</span></p>
+                <p>If you don't receive an email within 5 minutes, please check your spam folder or Contact Support.</p>
+                <p>Still having trouble? Check our Contact Support</p>
+            </div>
+        </div>
+
+        <a href="login.html" 
+            class="block w-full text-center bg-white hover:bg-slate-200 text-textBlue font-bold py-2.5 rounded-full text-sm transition-colors shadow-lg">
+            Back to Log In
+        </a>
+
+    </div>
+
+</body>
+</html>
